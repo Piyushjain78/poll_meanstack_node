@@ -31,21 +31,21 @@ jobs:
     # - run: npm test
 
   # Below code is for unit tests. i comment bcz we dont have added the unit tests, but if any project has unit test cases, then enable below lines
-  # unit-tests:
+  unit-tests:
 
-  #   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x, 20.x, 22.x]
-  #       # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-  #   steps:
-  #   - uses: actions/checkout@v4
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v4
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #       cache: 'npm'
-  #   - run: npm i
-  #   - run: npm test   
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm i
+    - run: npm test   
